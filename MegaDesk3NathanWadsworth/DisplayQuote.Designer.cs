@@ -1,6 +1,6 @@
 ﻿namespace MegaDesk3NathanWadsworth
 {
-    partial class Form1
+    partial class DisplayQuote
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.BackBut = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // BackBut
+            // 
+            this.BackBut.Location = new System.Drawing.Point(12, 399);
+            this.BackBut.Name = "BackBut";
+            this.BackBut.Size = new System.Drawing.Size(99, 39);
+            this.BackBut.TabIndex = 0;
+            this.BackBut.Text = "Back";
+            this.BackBut.UseVisualStyleBackColor = true;
+            this.BackBut.Click += new System.EventHandler(this.BackBut_Click);
+            // 
+            // DisplayQuote
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(484, 450);
+            this.Controls.Add(this.BackBut);
+            this.Name = "DisplayQuote";
+            this.Text = "DisplayQuote";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button BackBut;
     }
 }
-

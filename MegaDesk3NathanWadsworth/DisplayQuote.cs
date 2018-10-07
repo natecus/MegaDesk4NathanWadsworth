@@ -10,11 +10,18 @@ using System.Windows.Forms;
 
 namespace MegaDesk3NathanWadsworth
 {
-    public partial class Form1 : Form
+    public partial class DisplayQuote : Form
     {
-        public Form1()
+        public DisplayQuote()
         {
             InitializeComponent();
+        }
+
+        private void BackBut_Click(object sender, EventArgs e)
+        {
+            var newQuote = (NewQuote)Tag;
+            newQuote.Show();
+            Close();
         }
     }
 }
