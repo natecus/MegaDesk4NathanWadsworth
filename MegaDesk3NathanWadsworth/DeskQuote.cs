@@ -15,9 +15,10 @@ namespace MegaDesk4NathanWadsworth
 
         public string GetQuote(Desk desk)
         {
+           
             double area = desk.Width * desk.Height;
             int rush = this.RushOrder;
-            int addedDays = 0;
+            int addedDays = 30;
             DateTime date = new DateTime();
             date = DateTime.Now;
 
@@ -55,9 +56,9 @@ namespace MegaDesk4NathanWadsworth
                     break;
             }
             switch (rush)
-            {
+            {          
                 case 1:
-                    addedDays += 3;
+                    addedDays = 3;
                     if (area < 1000)
                     {
                         price += 60;
@@ -74,7 +75,7 @@ namespace MegaDesk4NathanWadsworth
                     csvInput += "3 Days,";
                     break;
                 case 2:
-                    addedDays += 5;
+                    addedDays = 5;
                     if (area < 1000)
                     {
                         price += 40;
@@ -91,7 +92,7 @@ namespace MegaDesk4NathanWadsworth
                     csvInput += "5 Days,";
                     break;
                 case 3:
-                    addedDays += 7;
+                    addedDays = 7;
                     if (area < 1000)
                     {
                         price += 30;
@@ -114,8 +115,9 @@ namespace MegaDesk4NathanWadsworth
             }
             DateTime dueDate = new DateTime();
             dueDate = date.AddDays(addedDays);
+            string id = Guid.NewGuid().ToString();
 
-            csvInput += price + "," + dueDate.ToString("MM/dd") + Environment.NewLine;
+            csvInput += price + "," + dueDate.ToString("MM/dd") + "," + id + Environment.NewLine;
           
             File.AppendAllText(@".\data.csv", csvInput);
 
