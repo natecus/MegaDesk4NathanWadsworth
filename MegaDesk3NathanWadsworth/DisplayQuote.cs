@@ -3,25 +3,27 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk3NathanWadsworth
+namespace MegaDesk4NathanWadsworth
 {
     public partial class DisplayQuote : Form
     {
-        public DisplayQuote()
+        public DisplayQuote(DeskQuote deskQuote)
         {
             InitializeComponent();
+            CustNameTB.Text = deskQuote.CustomerName;
+            var lastLine = File.ReadLines("data.csv").Last();
+            string[] stringArray = lastLine.Split(',');
         }
 
-        private void BackBut_Click(object sender, EventArgs e)
+        private void DisplayQuote_Load(object sender, EventArgs e)
         {
-            var newQuote = (NewQuote)Tag;
-            newQuote.Show();
-            Close();
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace MegaDesk3NathanWadsworth
+﻿namespace MegaDesk4NathanWadsworth
 {
     partial class NewQuote
     {
@@ -40,6 +40,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.MatCombo = new System.Windows.Forms.ComboBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.CustNameTB = new System.Windows.Forms.TextBox();
+            this.quoteTB = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.WidthUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepthUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DrawersUpDown)).BeginInit();
@@ -68,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(32, 43);
+            this.label1.Location = new System.Drawing.Point(32, 84);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 2;
@@ -77,7 +81,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(32, 83);
+            this.label2.Location = new System.Drawing.Point(32, 124);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(80, 13);
             this.label2.TabIndex = 3;
@@ -86,7 +90,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(32, 122);
+            this.label3.Location = new System.Drawing.Point(32, 163);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(96, 13);
             this.label3.TabIndex = 4;
@@ -94,7 +98,7 @@
             // 
             // WidthUpDown
             // 
-            this.WidthUpDown.Location = new System.Drawing.Point(147, 41);
+            this.WidthUpDown.Location = new System.Drawing.Point(147, 82);
             this.WidthUpDown.Maximum = new decimal(new int[] {
             96,
             0,
@@ -116,7 +120,7 @@
             // 
             // DepthUpDown
             // 
-            this.DepthUpDown.Location = new System.Drawing.Point(147, 81);
+            this.DepthUpDown.Location = new System.Drawing.Point(147, 122);
             this.DepthUpDown.Maximum = new decimal(new int[] {
             48,
             0,
@@ -138,7 +142,7 @@
             // 
             // DrawersUpDown
             // 
-            this.DrawersUpDown.Location = new System.Drawing.Point(147, 120);
+            this.DrawersUpDown.Location = new System.Drawing.Point(147, 161);
             this.DrawersUpDown.Maximum = new decimal(new int[] {
             7,
             0,
@@ -156,7 +160,7 @@
             // RushCombo
             // 
             this.RushCombo.FormattingEnabled = true;
-            this.RushCombo.Location = new System.Drawing.Point(147, 199);
+            this.RushCombo.Location = new System.Drawing.Point(147, 240);
             this.RushCombo.Name = "RushCombo";
             this.RushCombo.Size = new System.Drawing.Size(105, 21);
             this.RushCombo.TabIndex = 13;
@@ -164,7 +168,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 163);
+            this.label4.Location = new System.Drawing.Point(30, 204);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(84, 13);
             this.label4.TabIndex = 14;
@@ -173,7 +177,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(32, 202);
+            this.label5.Location = new System.Drawing.Point(32, 243);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 13);
             this.label5.TabIndex = 15;
@@ -182,16 +186,54 @@
             // MatCombo
             // 
             this.MatCombo.FormattingEnabled = true;
-            this.MatCombo.Location = new System.Drawing.Point(147, 160);
+            this.MatCombo.Location = new System.Drawing.Point(147, 201);
             this.MatCombo.Name = "MatCombo";
             this.MatCombo.Size = new System.Drawing.Size(105, 21);
             this.MatCombo.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(32, 298);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Desk Cost";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 46);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(82, 13);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Customer Name";
+            // 
+            // CustNameTB
+            // 
+            this.CustNameTB.Location = new System.Drawing.Point(147, 46);
+            this.CustNameTB.Name = "CustNameTB";
+            this.CustNameTB.Size = new System.Drawing.Size(105, 20);
+            this.CustNameTB.TabIndex = 20;
+            // 
+            // quoteTB
+            // 
+            this.quoteTB.Location = new System.Drawing.Point(147, 295);
+            this.quoteTB.Name = "quoteTB";
+            this.quoteTB.ReadOnly = true;
+            this.quoteTB.Size = new System.Drawing.Size(105, 20);
+            this.quoteTB.TabIndex = 21;
             // 
             // NewQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 450);
+            this.Controls.Add(this.quoteTB);
+            this.Controls.Add(this.CustNameTB);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.MatCombo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -205,7 +247,7 @@
             this.Controls.Add(this.DisplayQuoteBut);
             this.Controls.Add(this.Back);
             this.Name = "NewQuote";
-            this.Text = "New Quote";
+            this.Text = "7";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.NewQuote_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.WidthUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DepthUpDown)).EndInit();
@@ -229,5 +271,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox MatCombo;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox CustNameTB;
+        private System.Windows.Forms.TextBox quoteTB;
     }
 }

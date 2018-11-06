@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk3NathanWadsworth
+namespace MegaDesk4NathanWadsworth
 {
     public partial class NewQuote : Form
     {
@@ -19,7 +19,8 @@ namespace MegaDesk3NathanWadsworth
             var materials = new List<Desk.DesktopMaterial>();
             materials = Enum.GetValues(typeof(Desk.DesktopMaterial))
                 .Cast<Desk.DesktopMaterial>().ToList();
-
+            MatCombo.DataSource = materials;
+            MatCombo.SelectedIndex = -1;
             RushCombo.Items.Add("None");
             RushCombo.Items.Add("3 Days");
             RushCombo.Items.Add("5 Days");
@@ -35,22 +36,39 @@ namespace MegaDesk3NathanWadsworth
 
         private void DisplayQuoteBut_Click(object sender, EventArgs e)
         {
-            var depth = DepthUpDown;
-            var width = WidthUpDown;
-            var drawers = DrawersUpDown;
-            var surface = MatCombo;
+            var depth =Convert.ToInt32(DepthUpDown.Value);
+            var width = Convert.ToInt32(WidthUpDown.Value);
+            var drawers = Convert.ToInt32(DrawersUpDown.Value);
+            var surface = (Desk.DesktopMaterial)Enum.Parse(typeof(Desk.DesktopMaterial)
+               , MatCombo.Text);
+            var rush = RushCombo.SelectedIndex;
 
-            //Desk desk = new Desk(width,depth,drawers,surface);
+            
+            Desk desk = new Desk();
+            desk.Height = depth;
+            desk.Width = width;
+            desk.NumberOfDrawers = drawers;
+            desk.Material = surface;
+            DeskQuote deskQuote = new DeskQuote();
+            deskQuote.RushOrder = rush;
+            deskQuote.CustomerName = CustNameTB.Text;
 
-            DisplayQuote displayQuoteForm = new DisplayQuote();
-            displayQuoteForm.Tag = this;
-            displayQuoteForm.Show(this);
-            Hide();
+            quoteTB.Text = deskQuote.GetQuote(desk);
+
+          //DisplayQuote displayQuoteForm = new DisplayQuote(deskQuote);
+          //displayQuoteForm.Tag = this;
+          //displayQuoteForm.Show(this);
+          //Hide();
         }
 
         private void NewQuote_FormClosed(object sender, FormClosedEventArgs e)
         {
             InitializeComponent();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

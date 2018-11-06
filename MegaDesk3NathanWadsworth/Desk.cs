@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MegaDesk3NathanWadsworth
+namespace MegaDesk4NathanWadsworth
 {
-    class Desk
+    public class Desk
     {
 
         public enum DesktopMaterial
@@ -17,16 +17,15 @@ namespace MegaDesk3NathanWadsworth
             Veneer,
             Pine
         }
-        int width, depth, drawers;
-        string surface;
         
-        Desk(int width, int depth, int drawers, string surface)
-        {
-            this.width = width;
-            this.depth = depth;
-            this.drawers = drawers;
-            this.surface = surface;
-        }
+
+        public double Width { get; set; }
+
+        public double Height { get; set; }
+
+        public double NumberOfDrawers { get; set; }
+        
+        public DesktopMaterial Material { get; set; }
 
     }
 }

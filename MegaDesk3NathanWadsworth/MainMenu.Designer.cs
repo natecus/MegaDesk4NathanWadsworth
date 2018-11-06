@@ -1,4 +1,4 @@
-﻿namespace MegaDesk3NathanWadsworth
+﻿namespace MegaDesk4NathanWadsworth
 {
     partial class MainMenu
     {
